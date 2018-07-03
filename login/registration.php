@@ -5,18 +5,27 @@ if (isset($_POST['submit'])){
  $con = new PDO('mysql:host=localhost;port=3306;dbname=Survey','root','');
 session_start();
 
-  $name = $con->real_escape_string($_POST['name']);
-  $email = $con->real_escape_string($_POST['email']);
-  $password = $con->real_escape_string($_POST['password']);
-  $cpassword = $con->real_escape_string($_POST['cpassword']);
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  $cpassword = $_POST['cpassword'];
 
   if ($password != $cpassword)
-    $msg = "Please check your passwords!!";
+    $msg = "Please cheak your passwords!!";
   else{
-        $hash = password_hash($password, algo: PASSWORD_BCRYPT);
-        
-        $con->query(query: "INSERT INTO Register (name,email,password) values ('$name','$email','$hash')");
-        $msg1 = "You have been successfully registered!";
+        // $hash = password_hash($password, algo: PASSWORD_BCRYPT);
+        // $hash = password_hash ( $password , PASSWORD_BCRYPT ['cost' =>12 ] );
+        // $con->query(query:"INSERT INTO Register (name,email,password) values ('$name','$email','$password')");
+        // $msg = "You have been successfully registered!";
+
+        $stmt = $con->prepare("INSERT INTO Register VALUES (:name, :email, :password, :cpassword)");
+$stmt->execute(array(
+':name' => $_POST['name'],
+':email' => $_POST['email'],
+':password' => $_POST['password'],
+':cpassword' => $_POST['cpassword']
+));
+
   }
 
 }
@@ -44,7 +53,8 @@ session_start();
             <img src="face.png" alt="face image">
               <?php if ($msg !="") {
                 # code...
-                echo $msg. "<br><br>";
+                 echo $msg. "<br><br>";
+
               }
               ?>
           </div>
