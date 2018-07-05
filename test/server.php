@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $name = "";
 $email = "";
 $errors = array();
@@ -46,7 +48,50 @@ if (isset($_POST['Submit'])) {
       // mysqli_query($db, $sql);
       mysqli_query($db,"INSERT INTO users (name,email,phone,NID,DOB,password) VALUES ('$name', '$email','$phone','$NID','$DOB','$password')");
       mysqli_close($db);
+      $_SESSION['name'] = $name;
+      $_SESSION['success'] = "You are now logged in";
+      header('location: index.php'); //redirect to home page
     }
+}
+
+//log user in form login page
+if (isset($_POST['login'])) {
+  $email = mysql_real_escape_string($_POST['email']);
+  $password = mysql_real_escape_string($_POST['password_1']);
+
+  //ensure form fields are filled properly
+    if (empty($email)) {
+      # code...
+       array_push($errors, "Email is required!!");
+    }
+    if (empty($password)) {
+      # code...
+       array_push($errors, "Password is required!!");
+    }
+    if (count($errors)==0) {
+      $password = md5($password);
+      $query = " SELECT * FROM users WHERE name='$name' AND password='$password'";
+      $result = mysqli_query($db, $query);
+
+      if (mysqli_num_rows($result) == 1) {
+        //log user in
+        $_SESSION['name'] = $name;
+        $_SESSION['success'] = "You are now logged in";
+        header('location: index.php'); //redirect to home page
+
+      }else {
+            array_push($errors, "Wrong email/password combination");
+            header('location: testlogin.php');
+      }
+    }
+}
+
+
+//Logout
+if (isset($_GET['logout'])) {
+  session_destroy();
+  unset($_SESSION['name']);
+  header('location: testlogin.php');
 }
 
 

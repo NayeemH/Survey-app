@@ -1,3 +1,7 @@
+<?php include('server.php'); ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -18,6 +22,7 @@
 
           </div>
             <form class="col-12" action="test.php" method="post">
+              <?php include('errors.php'); ?>
               <div class="form-group">
                 <input type="email" class="form-control" placeholder="Email" name="email" value="">
               </div>
