@@ -67,3 +67,13 @@ button{
   background-color: #25a890!important;
   border-bottom: 4px solid #25a890!important;
 }
+
+.error{
+border: 1px solid red;
+margin: 0 auto;
+padding: 10px;
+background: blue;
+text-align: left;
+width: 90%;
+border-radius: 5px;
+}
