@@ -18,7 +18,7 @@ if (isset($_POST['Submit'])) {
   $password_2 = mysql_real_escape_string($_POST['password_2']);
   $DOB = mysql_real_escape_string($_POST['DOB']);
   $NID = mysql_real_escape_string($_POST['NID']);
-  $phone_number = mysql_real_escape_string($_POST['phone_number']);
+  $phone = mysql_real_escape_string($_POST['phone']);
 
   //ensure form fields are filled properly
     if (empty($name)) {
@@ -44,7 +44,7 @@ if (isset($_POST['Submit'])) {
       $password = md5($password_1);  //encrypted password
       // $sql = "INSERT INTO users (name,email,phone_namber,NID,DOB,password) VALUES ('$name', '$email','$phone_number','$NID','$DOB','$password')"
       // mysqli_query($db, $sql);
-      mysqli_query($db,"INSERT INTO users (name,email,phone_namber,NID,DOB,password) VALUES ('$name', '$email','$phone_number','$NID','$DOB','$password')");
+      mysqli_query($db,"INSERT INTO users (name,email,phone,NID,DOB,password) VALUES ('$name', '$email','$phone','$NID','$DOB','$password')");
       mysqli_close($db);
     }
 }

@@ -37,7 +37,7 @@ include('server.php');
                 <input type="email" class="form-control" placeholder="Email" name="email" value="<?php echo $email; ?>">
               </div>
               <div class="form-group">
-                <input type="number" class="form-control" placeholder="Phone Number" name="phone_number" value="<?php echo $phone_number; ?>">
+                <input type="number" class="form-control" placeholder="Phone Number" name="phone" value="<?php echo $phone; ?>">
               </div>
               <div class="form-group">
                 <input type="number" class="form-control" placeholder="NID number" name="NID" value="<?php echo $NID; ?>">
