@@ -11,7 +11,7 @@ session_start();
   $cpassword = $_POST['cpassword'];
 
   if ($password != $cpassword)
-    $msg = "Please cheak your passwords!!";
+    $msg = "Please check your passwords!!";
   else{
         // $hash = password_hash($password, algo: PASSWORD_BCRYPT);
         // $hash = password_hash ( $password , PASSWORD_BCRYPT ['cost' =>12 ] );
@@ -53,8 +53,7 @@ $stmt->execute(array(
             <img src="face.png" alt="face image">
               <?php if ($msg !="") {
                 # code...
-                 echo $msg. "<br><br>";
-
+                echo $msg. "<br><br>";
               }
               ?>
           </div>
