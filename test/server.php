@@ -68,23 +68,28 @@ if (isset($_POST['login'])) {
       # code...
        array_push($errors, "Password is required!!");
     }
-    if (count($errors)==0) {
-      $password = md5($password);
-      $query = " SELECT * FROM users WHERE name='$name' AND password='$password'";
-      $result = mysqli_query($db, $query);
+    // if (count($errors) == 0) {
+    //   $password = md5($password);
+    //   $query = " SELECT * FROM users WHERE name='$name' AND password='$password'";
+    //   $result = mysqli_query($db, $query);
 
-      if (mysqli_num_rows($result) == 1) {
-        //log user in
-        $_SESSION['name'] = $name;
-        $_SESSION['success'] = "You are now logged in";
-        header('location: index.php'); //redirect to home page
+    if (count($errors) == 0) {
+        $password = md5($password);
+        $result = mysqli_query($db,"SELECT * FROM users WHERE name='$name' AND password='$password'");
+        mysqli_close($db);
 
-      }else {
-            array_push($errors, "Wrong email/password combination");
-            header('location: testlogin.php');
       }
-    }
-}
+       if (mysqli_num_rows($result) == 1) {
+         //log user in
+         $_SESSION['name'] = $name;
+         $_SESSION['success'] = "You are now logged in";
+         header('location: index.php'); //redirect to home page
+
+       }else {
+              array_push($errors, "Wrong email/password combination");
+             header('location: testlogin.php');
+        }
+  }
 
 
 //Logout

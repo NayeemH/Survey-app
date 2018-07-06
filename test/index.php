@@ -1,4 +1,11 @@
-<?php include('server.php'); ?>
+<?php include('server.php');
+
+if (empty($_SESSION['name'])) {
+  # code...
+  header('location: testlogin.php');
+}
+
+ ?>
 
 
 
@@ -8,6 +15,7 @@
   <head>
     <meta charset="utf-8">
     <title>User registration</title>
+    <link rel="stylesheet" type="text/css" href="indexstyle.css">
   </head>
   <body>
     <div class="header">

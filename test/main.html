@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bangla</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="mainstyle.css">
+    <link rel="stylesheet" href="resetphp.css">
+  </head>
+  <body>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="#">Survey</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="main.html">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../login/login.html">Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../login/register.html">Register</a>
+    </li>
+
+  </ul>
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</div>
+</nav>
+  <!--navbar end-->
+  <!-- QUESTION:  -->
+  <div class="modal-dialog text-center">
+    <div class="col-sm-8 main-section">
+      <div class="modal-content">
+          <form class="col-12" action="index.html" method="post">
+            <div class="form-group">
+              <p>১)লিঙ্গ?</p>
+              <input type="radio" name="gender" value="male">পুরুষ
+              <input type="radio" name="gender" value="female">মহিলা
+              <input type="radio" name="gender" value="othes">অন্যান্য <br>
+
+              <p>২)আপনি ভোটার হয়েছেন?</p>
+              <input type="radio" name="voter" value="yes2">হ্যাঁ
+              <input type="radio" name="voter" value="no2">না <br>
+              <p>৩)আপনি আগে কখনো ভোট দিয়েছেন? </p>
+              <input type="radio" name="previousvote" value="yes3">হ্যাঁ
+              <input type="radio" name="previousvote" value="no3"> না <br>
+
+              <p>৪)ভোটের মাধ্যমে জনগণের স্বার্থ সংরক্ষিত হচ্ছে কি? </p>
+              <input type="radio" name="publichelp" value="yes4">হ্যাঁ
+              <input type="radio" name="publichelp" value="no4">না
+              <input type="radio" name="publichelp" value="dntno4">জানিনা <br>
+
+              <p>৪)ভোটের মাধ্যমে জনগণের স্বার্থ সংরক্ষিত হচ্ছে কি? </p>
+              <input type="radio" name="publichelp" value="yes4">হ্যাঁ
+              <input type="radio" name="publichelp" value="no4">না
+              <input type="radio" name="publichelp" value="dntno4">জানিনা <br>
+            </div>
+
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="Password" name="" value="">
+            </div>
+            <button type="submit" class="btn" name="button">
+              <i class="fas fa-sign-in-alt"></i>Login
+            </button>
+          </form>
+
+      </div>
+    </div>
+  </div>
+
+<!--end QUESTION:  -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
